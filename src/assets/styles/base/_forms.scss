@@ -1,0 +1,294 @@
+::placeholder {
+  color: $input-placeholder-color;
+}
+
+.input-field {
+  &__input {
+    position: relative;
+  }
+
+  &.error {
+    .input,
+    .textarea {
+      border-color: $error;
+      padding-right: 5rem;
+    }
+
+    .input-notification {
+      color: $error--muted;
+
+      &__icon {
+        fill: $error--muted;
+      }
+    }
+  }
+  
+  &.warning {
+    .input,
+    .textarea {
+      border-color: $warning;
+      padding-right: 5rem;
+    }
+
+    .input-notification {
+      color: $warning--muted;
+
+      &__icon {
+        fill: $warning--muted;
+      }
+    }
+  }
+
+  &.success {
+    .input,
+    .textarea {
+      border-color: $success;
+      padding-right: 5rem;
+    }
+
+    .input-notification {
+      color: $success--muted;
+
+      &__icon {
+        fill: $success--muted;
+      }
+    }
+  }
+
+  .input-notification {
+    font-size: 1.5rem;
+    display: block;
+    margin-top: .5rem;
+
+    &__icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      right: 2.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.input,
+.select {
+  // iOS shadow
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+
+  padding: 1.2rem 1.5rem;
+  width: 100%;
+  font-size: $input-font-size;
+  border: .1rem solid $input-border-normal;
+  outline: none;
+  border-radius: $input-border-radius;
+  background: $white;
+  font-family: inherit;
+  transition: all .3s;
+  color: $input-typing-color;
+  line-height: 1.5;
+
+  &:hover {
+    border-color: $input-border-hover;
+  }
+
+  &:focus {
+    border-color: $input-border-focus;
+    box-shadow: $input-focus-shadow;
+  }
+}
+
+.select {
+  padding-right: 4rem;
+  background-repeat: no-repeat;
+  background-position: right 1.5rem center;
+  background-size: 1.5rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.label {
+  user-select: none;
+  cursor: pointer;
+  font-size: $input-font-size;
+  margin-bottom: .5rem;
+  display: inline-block;
+
+  span {
+    color: $primary-color;
+  }
+}
+
+fieldset {
+  border: none;
+}
+
+/* 
+ *
+ * Checkbox
+ *
+ */
+.checkbox-label {
+  &__main {
+    font-size: $input-font-size;
+    cursor: pointer;
+    color: $font-base-color;
+    padding: 0 0 0 3rem;
+    position: relative;
+    user-select: none;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    
+    min-width: 2rem;
+    min-height: 2rem;
+
+    &:hover {
+      &::before {
+        border-color: $input-border-hover;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      border: .2rem solid $input-border-normal;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: .2rem;
+      transition: all .3s;
+    }
+  }
+
+  &__input {
+    @include hide-element;
+  }
+
+  &__input:checked + .checkbox-label__main::before {
+    content: "";
+    background-color: $primary-color;
+    position: absolute;
+    border-color: $primary-color;
+
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    background-size: 1.8rem;
+    background-position: center;
+  }
+
+  &__input[disabled] + .checkbox-label__main {
+    opacity: .5;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &__amount {
+    color: $gray;
+    font-size: 1.4rem;
+    margin-left: .5rem;
+  }
+}
+
+/* 
+ *
+ * Radio
+ *
+ */
+.radio-label {
+  &__main {
+    font-size: $input-font-size;
+    cursor: pointer;
+    color: $font-base-color;
+    height: 100%;
+    padding: 0 0 0 3rem;
+    position: relative;
+    user-select: none;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    
+    min-width: 2rem;
+    min-height: 2rem;
+
+    &:hover {
+      &::before {
+        border-color: $input-border-hover;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      border: .2rem solid $input-border-normal;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      background: $white;
+      transition: all .3s;
+    }
+
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      background-color: transparent;
+      border: .2rem solid transparent;
+      transition: all .3s;
+    }
+  }
+
+  &__input {
+    @include hide-element;
+  }
+
+  &__input:checked + .radio-label__main::before {
+    border-color: $primary-color;
+  }
+
+  &__input:checked + .radio-label__main::after {
+    background-color: $primary-color;
+    box-shadow: 0 0 0 .3rem $white inset;
+  }
+
+  &__input[disabled] + .radio-label__main {
+    opacity: .5;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &__amount {
+    color: $dark--medium;
+    font-size: 1.4rem;
+    margin-left: .5rem;
+  }
+}
+/* Radio */
+
+// type search hide cross
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+// type number hide arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  // display: none;          // <- Crashes Chrome on hover
+  -webkit-appearance: none;
+  margin: 0;                 // <-- Apparently some margin are still there even though it's hidden
+}
+
+input[type=number] {
+  -moz-appearance: textfield; // Firefox
+}

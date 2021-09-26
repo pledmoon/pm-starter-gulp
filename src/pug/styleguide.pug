@@ -1,0 +1,836 @@
+extends templates/main
+
+block variables
+  - const title = 'Styleguide';
+  - const pageClass = 'ui-page';
+
+block content
+
+  style.
+    .demo-section {
+      margin-bottom: 4rem;
+    }
+
+    .demo-subsection:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    .color-square {
+      width: 10rem;
+      height: 10rem;
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-end;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .color-square--primary {
+      background-color: var(--primary-color, #3bb396);
+    }
+
+    .color-square--secondary {
+      background-color: var(--secondary-color, #2e3142);
+    }
+
+    .color-square--tertiary {
+      background-color: var(--tertiary-color, skyblue);
+    }
+
+    .row {
+      display: flex;
+      margin: -3rem -1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .row:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    [class*="col-"] {
+      padding: 3rem 1.5rem 0;
+    }
+
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .col-4 {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+
+    .col-4 > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    .checkbox-label__main-tooltip {
+      cursor: help;
+    }
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      margin-bottom: 2rem;
+    }
+
+  main.content
+
+    .container-fluid
+
+      // template colors
+      .demo-section
+
+        h2 Brand colors
+
+        .row
+          .col-inline
+            .color-square.color-square--primary
+              small Primary
+          .col-inline
+            .color-square.color-square--secondary
+              small Secondary
+          .col-inline
+            .color-square.color-square--tertiary
+              small Tertiary
+      // /template colors
+
+      // buttons
+      .demo-section
+
+        h2 Buttons
+
+        .demo-subsection
+
+          h3 Types
+
+          .row
+            .col-item
+              a.btn.btn--primary(href="#") Button Primary
+            .col-item
+              a.btn.btn--secondary(href="#") Button Secondary
+            .col-item
+              a.btn.btn--tertiary(href="#") Button Tertiary
+            .col-item
+              a.btn.btn--gray(href="#") Button Gray
+            .col-item
+              a.btn.btn--danger(href="#") Button Danger
+            .col-item
+              a.btn.btn--grad(href="#") Button Gradient
+            .col-item
+              a.btn.btn--primary.btn--animated(href="#") Button Animated
+
+          .row
+            .col-item
+              a.btn.btn--primary-reverse(href="#") Button Primary
+            .col-item
+              a.btn.btn--secondary-reverse(href="#") Button Secondary
+            .col-item
+              a.btn.btn--tertiary-reverse(href="#") Button Tertiary
+            .col-item
+              a.btn.btn--gray-reverse(href="#") Button Gray
+            .col-item
+              a.btn.btn--danger-reverse(href="#") Button Danger
+            .col-item
+              a.btn(href="#") Button Link
+
+          h3 Disabled
+
+          .row
+            .col-item
+              a.btn.btn--primary.disabled(href="#") Button Primary
+            .col-item
+              button.btn.btn--primary-reverse(disabled) Button Primary
+
+        .demo-subsection
+
+          h3 Sizes
+
+          .row
+            .col-item
+              a.btn.btn--primary.btn--sm(href="#") Small Button Primary
+            .col-item
+              a.btn.btn--secondary.btn--sm(href="#") Small Button Secondary
+            .col-item
+              a.btn.btn--tertiary.btn--sm(href="#") Small Button Tertiary
+
+          .row
+            .col-item
+              a.btn.btn--primary.btn--lg(href="#") Large Button Primary
+            .col-item
+              a.btn.btn--secondary.btn--lg(href="#") Large Button Secondary
+            .col-item
+              a.btn.btn--tertiary.btn--lg(href="#") Large Button Tertiary
+
+        .demo-subsection
+
+          h3 Icons
+
+          .row
+
+            .col-item
+              a.btn.btn--primary(href="#")
+                +icon('close', 'btn__icon')
+                span.btn__text Button Primary
+            .col-item
+              a.btn.btn--secondary(href="#") 
+                span.btn__text Button Secondary
+                +icon('close', 'btn__icon')
+            .col-item
+              a.btn.btn--primary(href="#") 
+                +icon('close', 'btn__icon')
+
+        .demo-subsection
+
+          h3 Full width buttons
+
+          .row
+
+            .col-12
+              a.btn.btn--primary.btn--block(href="#") Button Primary
+
+            .col-12
+              a.btn.btn--secondary.btn--block(href="#") Secondary Primary
+      // buttons
+
+      .demo-section
+
+        h2 Forms
+
+        .demo-subsection
+
+          h3 Fields
+
+          .row
+
+            .col-4
+
+              .input-field
+                label.label(for="field-1") Text field #[span *]
+                .input-field__input
+                  input.input(type="text" name="text" placeholder="Text" id="field-1")
+
+              .input-field
+                label.label(for="field-2") Email field #[span *]
+                .input-field__input
+                  input.input(type="email" name="email" placeholder="Email" id="field-2")
+
+              .input-field
+                label.label(for="field-3") Password field #[span *]
+                .input-field__input
+                  input.input(type="password" name="password" placeholder="Password" id="field-3")
+
+              .input-field
+                label.label(for="field-7") Message field
+                .input-field__input
+                  textarea.input(rows="5" name="textarea-field" placeholder="Message" id="field-7")
+
+            .col-4
+
+              .input-field
+                label.label(for="field-8-1") Native select
+                select.select(id="field-8-1" name="default-select" placeholder="test")
+                  option(value="") Sort by
+                  option(value="name") Sort by name
+                  option(value="date") Sort by date
+                  option(value="price") Sort by price
+                  option(value="rating") Sort by rating
+
+              //- .input-field
+              //-   label.label(for="field-8") Choices plugin (default)
+              //-   select.js-select-default(id="field-8" name="default-select" placeholder="test")
+              //-     option(value="") Sort by
+              //-     option(value="name") Sort by name
+              //-     option(value="date") Sort by date
+              //-     option(value="price") Sort by price
+              //-     option(value="rating") Sort by rating
+
+              //- .input-field
+              //-   label.label(for="field-9") Choices plugin (autocomplete)
+              //-   select.js-select-autocomplete(id="field-9" name="default-select")
+              //-     option(value="") Choose your fruit
+              //-     option(value="fruit-1") Apple
+              //-     option(value="fruit-2") Orange
+              //-     option(value="fruit-3") Banana
+              //-     option(value="fruit-4") Peach
+              //-     option(value="fruit-5") Mango
+              //-     option(value="fruit-6") Pineapple
+              //-     option(value="fruit-7") Tangerine
+
+            .col-4
+
+              .input-field
+                .checkbox-label
+                  input.checkbox-label__input(type="checkbox" checked name="opt 1" id="opt-1")
+                  label.checkbox-label__main(for="opt-1") Pointer #[span.checkbox-label__amount (22)]
+
+              .input-field
+                .checkbox-label
+                  input.checkbox-label__input(type="checkbox" name="opt 2" id="opt-2")
+                  label.checkbox-label__main(for="opt-2") Cursor #[span.checkbox-label__amount (12)]
+
+              .input-field
+                .checkbox-label
+                  input.checkbox-label__input(type="checkbox" name="opt 3" id="opt-3")
+                  label.checkbox-label__main(for="opt-3") Crosshair #[span.checkbox-label__amount (12)]
+
+              .input-field
+                .checkbox-label
+                  input.checkbox-label__input(type="checkbox" name="opt" id="opt-3-1" disabled)
+                  label.checkbox-label__main(for="opt-3-1") Help #[span.checkbox-label__amount (12)]
+
+              .input-field
+                .radio-label
+                  input.radio-label__input(type="radio" name="opt" checked id="opt-4")
+                  label.radio-label__main(for="opt-4") Male #[span.radio-label__amount (22)]
+
+              .input-field
+                .radio-label
+                  input.radio-label__input(type="radio" name="opt" id="opt-5")
+                  label.radio-label__main(for="opt-5") Female #[span.radio-label__amount (12)]
+
+              .input-field
+                .radio-label
+                  input.radio-label__input(type="radio" name="opt" id="opt-6" disabled)
+                  label.radio-label__main(for="opt-6") Noset #[span.radio-label__amount (35)]
+
+        .demo-subsection
+
+          h3 Validation
+          
+          .row
+
+            .col-4
+
+              .input-field.error
+                label(for="field-4") Text field #[span *]
+                .input-field__input
+                  input.input(type="text" name="text-field" placeholder="Text" id="field-4")
+                  +icon('error', 'input-notification__icon')
+                small.input-notification Email contains dot in the address field
+
+              .input-field.warning
+                label(for="field-5") Email field #[span *]
+                .input-field__input
+                  input.input(type="email" name="email-field" placeholder="Email" id="field-5")
+                  +icon('warning', 'input-notification__icon')
+                small.input-notification Email contains dot in the address field
+
+              .input-field.success
+                label(for="field-6") Password field #[span *]
+                .input-field__input
+                  input.input(type="password" name="password-field" placeholder="Password" id="field-6")
+                  +icon('success', 'input-notification__icon')
+                small.input-notification Email contains dot in the address field
+
+            .col-4
+
+            .col-4
+
+            .col-4
+
+            .col-4
+
+            .col-4
+
+      .demo-section
+
+        h2 Tooltips
+
+        .row
+
+          .col-item
+
+            span.checkbox-label__main-tooltip(data-tooltip="Tooltip informer, extra description")
+              //- | Tooltip 
+              +icon('question-circle', 'checkbox-label__tooltip-icon')
+
+      .demo-section
+
+        h2 Dropdowns
+
+        .row
+
+          .col-item
+
+            .custom-dropdown.js-dropdown
+              .js-dropdown-toggle.custom-dropdown__header
+                .custom-dropdown__heading 
+                  span.custom-dropdown__heading-text Dropdown
+              .custom-dropdown__body
+                ul.custom-dropdown__list
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link.is-disabled(href="#") Item disabled
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+
+          .col-item
+
+            .custom-dropdown.js-dropdown
+              .js-dropdown-toggle.custom-dropdown__header
+                .custom-dropdown__heading 
+                  span.custom-dropdown__heading-text Dropdown
+              .custom-dropdown__body.scrollbar
+                ul.custom-dropdown__list
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link.is-disabled(href="#") Item disabled
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+
+          .col-item
+
+            .custom-dropdown.js-dropdown
+              .js-dropdown-toggle.custom-dropdown__header
+                .custom-dropdown__heading 
+                  span.custom-dropdown__heading-text Dropdown
+              .custom-dropdown__body.js-custom-scroll
+                ul.custom-dropdown__list
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link.is-disabled(href="#") Item disabled
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+                  li.custom-dropdown__item
+                    a.custom-dropdown__link(href="#") Item
+
+      .demo-section
+
+        h2 Icons
+
+        .row
+
+          .col-item
+
+            .helper(data-tooltip="#arrow-left")
+              +icon('arrow-left', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#arrow-right")
+              +icon('arrow-right', 'helper__icon')
+          .col-item
+
+            .helper(data-tooltip="#close")
+              +icon('close', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#search")
+              +icon('search', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#chevron-up")
+              +icon('chevron-up', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#chevron-right")
+              +icon('chevron-right', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#chevron-down")
+              +icon('chevron-down', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#chevron-left")
+              +icon('chevron-left', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#check")
+              +icon('check', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#ellipsis-h")
+              +icon('ellipsis-h', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#ellipsis-v")
+              +icon('ellipsis-v', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#times")
+              +icon('times', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#question-circle")
+              +icon('question-circle', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#long-arrow-up")
+              +icon('long-arrow-up', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#long-arrow-right")
+              +icon('long-arrow-right', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#long-arrow-down")
+              +icon('long-arrow-down', 'helper__icon')
+
+          .col-item
+
+            .helper(data-tooltip="#long-arrow-left")
+              +icon('long-arrow-left', 'helper__icon')
+
+      .demo-section
+
+        h2 Tabs
+
+        .row
+
+          .col-12
+
+            .tabs.js-tabs
+
+              .tabs__header
+
+                .table-responsive
+                  ul.tabs__list
+                    li.tabs__item.js-tabs-item
+                      a.tabs__link.js-tabs-trigger.is-active(href="#tab-1") Tab 1
+                    li.tabs__item.js-tabs-item
+                      a.tabs__link.js-tabs-trigger(href="#tab-2") Tab 2
+                    li.tabs__item.js-tabs-item
+                      a.tabs__link.js-tabs-trigger(href="#tab-3") Tab 3
+
+              .tabs__panes
+
+                .tabs__tab-pane.js-tabs-pane.is-active
+
+                  p #[strong Tab 1:] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, porro, dicta!
+
+                .tabs__tab-pane.js-tabs-pane
+
+                  p #[strong Tab 2:] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, porro, dicta!
+
+                .tabs__tab-pane.js-tabs-pane
+
+                  p #[strong Tab 3:] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, porro, dicta!
+
+      .demo-section
+
+        h2 Accordions
+
+        .row
+
+          .col-12
+            
+            article.js-accordion.is-active.accordion
+              h3.js-accordion-trigger.accordion__heading Demo trigger
+              .js-accordion-body
+                p lorem ipsum
+                p lorem ipsum
+                p lorem ipsum
+                p lorem ipsum
+
+          .col-12
+            
+            article.js-accordion.accordion
+              h3.js-accordion-trigger.accordion__heading Demo trigger
+              .js-accordion-body
+                p lorem ipsum
+                p lorem ipsum
+                p lorem ipsum
+                p lorem ipsum
+
+          .col-12
+            
+            article.js-accordion.accordion
+              h3.js-accordion-trigger.accordion__heading Demo trigger
+              .js-accordion-body
+                p lorem ipsum
+                p lorem ipsum
+                p lorem ipsum
+                p lorem ipsum
+
+      .demo-section
+
+        h2 Modal wins
+
+        .row
+
+          .col-12
+
+            a.btn.btn--primary.btn--sm(href="#" data-modal-win-trigger="callback") Open modal window
+
+      .demo-section
+
+        h2 Carousels
+
+        h3 Section carousels
+
+        .row
+
+          .col-12
+
+            .js-section-carousel.swiper
+
+              .swiper-wrapper
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum #[a(href="#") dolor sit] avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+            .js-section-carousel-pagination.swiper-pagination
+
+            button.js-section-carousel-prev.swiper-button-prev
+              +icon('arrow-left')
+            button.js-section-carousel-next.swiper-button-next
+              +icon('arrow-right')
+
+        .row
+
+          .col-12
+
+            .js-section-carousel.swiper
+
+              .swiper-wrapper
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+            .js-section-carousel-pagination.swiper-pagination
+
+            button.js-section-carousel-prev.swiper-button-prev
+              +icon('arrow-left')
+            button.js-section-carousel-next.swiper-button-next
+              +icon('arrow-right')
+
+        .row
+
+          .col-12
+
+            .js-section-carousel.swiper
+
+              .swiper-wrapper
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide 
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+                    
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+                .swiper-slide
+
+                  .h3 Slide
+                  p lorem ipsum dolor sit avet
+
+            .js-section-carousel-pagination.swiper-pagination
+
+            button.js-section-carousel-prev.swiper-button-prev
+              +icon('arrow-left')
+            button.js-section-carousel-next.swiper-button-next
+              +icon('arrow-right')
+
+        h3 Responsive carousels
+
+        .row
+
+          .col-12
+
+            .swiper-demo
+
+              .swiper.js-carousel-responsive
+
+                .swiper-wrapper
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+
+                .swiper-controls
+                  button.js-carousel-responsive-prev.swiper-button.swiper-button-prev
+                    +icon('arrow-left', 'swiper-button-icon')
+                  button.js-carousel-responsive-next.swiper-button.swiper-button-next
+                    +icon('arrow-right', 'swiper-button-icon')
+
+              .js-carousel-responsive-pagination
+
+          .col-12
+
+            .swiper-demo
+
+              .swiper.js-carousel-responsive
+
+                .swiper-wrapper
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+                
+                  .swiper-slide
+
+                    .h3 Slide
+                    p lorem ipsum dolor sit avet
+
+                .swiper-controls
+                  button.js-carousel-responsive-prev.swiper-button.swiper-button-prev
+                    +icon('arrow-left', 'swiper-button-icon')
+                  button.js-carousel-responsive-next.swiper-button.swiper-button-next
+                    +icon('arrow-right', 'swiper-button-icon')
+
+              .js-carousel-responsive-pagination

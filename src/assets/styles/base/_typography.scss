@@ -1,0 +1,349 @@
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: $headings-weight;
+  font-family: $headings-fonts-stack;
+  line-height: $headings-line-height;
+  // color: $headings-color;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+}
+
+h2, .h2 {
+  font-size: 2.6rem;
+}
+
+h3, .h3 {
+  font-size: 2.2rem;
+}
+
+h4, .h4 {
+  font-size: 2rem;
+}
+
+h5, .h5 {
+  font-size: 1.6rem;
+}
+
+h6, .h6 {
+  font-size: 1.4rem;
+}
+
+.main-heading {
+  font-family: $headings-fonts-stack;
+  font-size: 2.8rem;
+  color: #222222;
+  line-height: $headings-line-height;
+  font-weight: $headings-weight;
+
+  @include media($md) {
+    font-size: 3.6rem;
+  }
+}
+
+//.section-heading {}
+
+.secondary-heading {
+  position: relative;
+  font-family: $headings-fonts-stack;
+  text-transform: uppercase;
+  color: $primary-color;
+  font-size: 2rem;
+}
+
+.tertiary-heading {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-family: $headings-fonts-stack;
+  color: $primary-color;
+  position: relative;
+  line-height: 1.2;
+  padding-bottom: 1.5rem;
+
+  @media (min-width: $md) {
+    font-size: 4rem;
+  }
+}
+
+.lead {
+  font-size: 1.8rem;
+}
+
+.small {
+  font-size: 1.4rem;
+}
+
+/* ---------- Post Typography ---------- */
+.rte,
+.post-entry {
+  line-height: 1.65;
+
+  // > *:not(:last-child) {
+  //   margin: 0 0 2.5rem;
+  // }
+
+  > * {
+    margin: 0 0 2.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+
+  h2 + * {
+    margin-top: 0;
+  }
+
+  a:not([class]) {
+    &:link {
+      color: $link-color-normal;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $link-color-visited;
+    }
+
+    &:hover {
+      color: $link-color-hover;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: mix(black, $link-color-hover, 25%);
+    }
+  }
+
+  // p {}
+
+  strong,
+  b {
+    font-weight: bold;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-left: 2rem;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: 0.7rem;
+      }
+
+      &::before {
+        content: "·";
+        color: #b4b4b4;
+        font-size: 3.6rem;
+        margin-right: 1.5rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 0.7;
+      }
+    }
+
+    ul,
+    ul ul {
+      margin: 0.7rem 0 0;
+    }
+  }
+
+  ol {
+    counter-reset: item-counter;
+
+    > li {
+      counter-increment: item-counter;
+    }
+
+    li {
+      padding-left: 2.5rem;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: 0.7rem;
+      }
+
+      &::before {
+        content: counter(item-counter) ". ";
+        font-size: 2rem;
+        color: $primary-color;
+        font-family: $headings-fonts-stack;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 1.2;
+      }
+    }
+
+    ol,
+    ol ol {
+      margin: 0.7rem 0 0;
+    }
+
+    ul {
+      color: #9a9a9a;
+      margin-top: 2rem;
+
+      li {
+        padding-left: 4rem;
+        font-weight: 400;
+
+        &::before {
+          content: "·";
+          background: transparent;
+          color: $primary-color;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  // dl {
+  //   dt {}
+
+  //   dd {}
+  // }
+
+  blockquote {
+    font-style: normal;
+    color: $dark--medium;
+    border-left: 0.3rem solid $primary-color;
+    padding-left: 3rem;
+
+    > * {
+      margin: 0;
+    }
+
+    cite {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+
+  q {}
+
+  cite {
+    font-size: smaller;
+    font-style: normal;
+  }
+
+  figure {}
+
+  figcaption {
+    color: #64748b;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+  }
+
+  mark {
+    background: yellow;
+    padding: .2rem .4rem;
+    border-radius: .3rem;
+  }
+
+  code {
+    background-color: rgba(68, 68, 68, 0.2);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+  }
+
+  pre {
+    border: 0.1rem solid rgba(68, 68, 68, 0.2);
+    border-radius: 0.3rem;
+    padding: 2rem;
+    overflow-x: auto;
+    background: #444;
+    color: #fff;
+
+    code {
+      background: transparent;
+    }
+  }
+
+  hr {
+    // margin-bottom: 2rem;
+    margin-bottom: 4.5rem;
+    margin-top: 4.5rem;
+    opacity: 0.3;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    font-size: 1.6rem;
+    border-collapse: collapse;
+  }
+
+  thead {
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  tr {
+    &:not(:first-child) {
+      border-top: 1px solid #e6e6e6;
+    }
+
+    &:hover {
+      td {
+        background: #fafafa;
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 1rem;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  td {
+    transition: all .3s;
+  }
+
+  .float-left {
+    float: left;
+    margin: 1.5rem 1.5rem 1.5rem 0;
+  }
+
+  .float-right {
+    float: right;
+    margin: 1.5rem 0 1.5rem 1.5rem;
+  }
+
+  .callout {
+    padding: 2rem;
+    background: #f0eedf;
+    color: #110b04;
+    position: relative;
+    border-radius: .5rem;
+  }
+}
+/* ---------- Post Typography ---------- */

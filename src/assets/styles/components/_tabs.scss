@@ -1,0 +1,61 @@
+.tabs {
+  $self: &;
+
+  /* Tabs Items */
+  &__header {
+    border-bottom: 1px solid #E8E8E8;
+  }
+
+  &__list {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  &__item {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: .9rem .5rem;
+    cursor: pointer;
+    transition: all .3s;
+    color: #222222;
+    border-bottom: .4rem solid transparent;
+
+    &:hover {
+      text-decoration: none;
+      font-weight: 500;
+      color: #222222;
+    }
+
+    &.is-active {
+      cursor: default;
+      font-weight: 500;
+      border-bottom-color: $primary-color;
+    }
+  }
+  /* Tabs Items */
+
+  /* Tabs Body */
+  &__panes {}
+
+  &__tab-pane {
+    padding: 3rem 0;
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+  /* Tabs Body */
+}

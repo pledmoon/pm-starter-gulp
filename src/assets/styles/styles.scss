@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+// 1.Abstracts (Configuration and Helpers)
+@import "abstracts/mixins";
+@import "abstracts/functions";
+@import "abstracts/variables";
+
+// 2.Vendors
+@import "ress/ress";
+@import "swiper/swiper";
+@import "tippy.js/dist/tippy";
+@import "simplebar/dist/simplebar";
+@import "lightgallery/scss/lightgallery";
+@import "vendors/simplebar";
+@import "vendors/tippy";
+
+// 3.Base stuff
+@import "base/base";      // maybe reset
+@import "base/utilities"; // aka helpers
+@import "base/fonts";
+@import "base/typography";
+@import "base/forms";
+//@import "base/table";
+@import "base/animations";
+@import "base/print";
+
+// 4.Components
+@import "components/icons";
+@import "components/buttons";
+@import "components/soc";
+@import "components/breadcrumbs";
+@import "components/pagination";
+@import "components/navbar";
+@import "components/tabs";
+@import "components/accordion";
+@import "components/dropdown";
+@import "components/modal-win";
+@import "components/common";
+
+// 5.Layout
+@import "layout/main-layout";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/section";
+@import "layout/carousels";
+
+// 6.Pages (page-specific styles)
+//@import 'pages/inner-page';
+
+// 7.Themes
+// @import 'themes/default';

@@ -1,0 +1,23 @@
+.section {
+  padding: 4rem 0;
+
+  @media (min-width: $md) {
+    padding: 5rem 0;
+  }
+
+  @include media($lg) {
+    padding: 6rem 0;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+    
+    @media (min-width: $md) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &.is-gray {
+    background: #F0F4F5;
+  }
+}

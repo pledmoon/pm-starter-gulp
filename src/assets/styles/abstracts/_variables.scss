@@ -1,0 +1,110 @@
+// ************************
+// | Template main colors |
+// ************************
+// Brand Color Palette
+$primary-color: #3bb396 !default;
+$secondary-color: #2e3142 !default;
+$tertiary-color: #ff6347 !default;
+
+// Useful colors
+$white: #ffffff !default;
+$black: #000000 !default;
+$dark: #333333 !default;
+$dark--medium: #666 !default;
+$dark--light: #999 !default;
+$dark--thin: #aaa !default;
+
+// Useful gray colors
+$gray: #cccccc !default;
+$gray--medium: #e6e6e6 !default;
+$gray--light: #f7f7f7 !default;
+$gray--thin: #fafafa !default;
+
+// Alert statusses colors
+$error: #D8000C;
+$error--muted: #FFBABA;
+$success: #4F8A10;
+$success--muted: #DFF2BF;
+$warning: #9F6000;
+$warning--muted: #FEEFB3;
+$info: #31708f;
+$info--muted: #d9edf7;
+
+// ***************
+// | Base styles |
+// ***************
+$body-bg: #FFFFFF !default;
+$layout-max-width: 1440px !default;
+
+$spacer: 1rem;
+
+// z-indexes
+$baseZIndex: 3 !default;
+$flowZIndex: 11 !default;
+$dropdownZIndex: 55 !default;
+$dropdownAboveZIndex: 77 !default;
+$overlayZIndex: 101 !default;
+$overlayAboveZIndex: 111 !default;
+
+// Breakpoints
+$breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$xs: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$xs--mw: 479px;
+$sm--mw: 575px;
+$md--mw: 767px;
+$lg--mw: 991px;
+$xl--mw: 1199px;
+$xxl--mw: 1399px;
+
+// **************
+// | Typography |
+// **************
+// Base fonts stack
+$font-base-weight: 400 !default;
+$font-base-stack: Roboto, Helvetica, Arial, sans-serif !default;
+$font-base-size: 1.6rem !default;
+$font-base-color: #333 !default;
+$base-line-height: 1.5 !default;
+
+// Headings
+$headings-weight: bold !default;
+$headings-fonts-stack: Roboto, Helvetica, Arial, sans-serif !default;
+$headings-color: #222222 !default;
+$headings-line-height: 1.1 !default;
+
+$subheading-color: #343434 !default;
+
+// link colors
+$link-color-normal: #4AA6E3 !default;
+$link-color-visited: #9964C7 !default;
+$link-color-hover: $primary-color !default;
+
+// *********
+// | Forms |
+// *********
+$input-font-size: 1.6rem;
+
+$input-placeholder-color: #BDBEB7;
+$input-typing-color: $font-base-color;
+
+$input-border-normal: #EFEFEF;
+$input-border-hover: #CCCCCC;
+$input-border-focus: $primary-color;
+
+$input-border-radius: .5rem;
+
+$input-focus-shadow: 0 0 1.5rem rgba($input-border-focus, 0.2);

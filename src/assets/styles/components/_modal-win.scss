@@ -1,0 +1,97 @@
+.modal-win {
+  $self: &;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: opacity .3s, transform .3s;
+  z-index: $overlayAboveZIndex;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: rgba($black, .5);
+
+  + .modal-win {
+    background: rgba($black, .35);
+  }
+
+  &__main {
+    padding: 3rem;
+    background: $white;
+    margin: 8rem auto;
+    position: relative;
+    width: 92%;
+
+    opacity: 0;
+    transition: opacity 1s;
+    animation: fadeOut .25s;
+
+    @include media($sm) {
+      max-width: 54rem;
+      width: 100%;
+    }
+
+    &.is-modal-win-opened  {
+      animation: .3s scaleIn forwards;
+      opacity: 1;
+    }
+
+    &--wide {
+      max-width: 115rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    border: none;
+    background: none;
+    width: 2rem;
+    height: 2rem;
+    top: 2rem;
+    right: 2rem;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(90deg);
+      color: $dark;
+    }
+
+    &-icon {
+      fill: currentColor;
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s;
+      cursor: pointer;
+    }
+  }
+
+  [data-modal-win][hidden] {
+    display: block !important;
+  }
+}
+
+body.is-modal-opened {
+  overflow: hidden;
+}
+
+.modal-content {
+  &__header {
+    margin-bottom: 3rem;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $black;
+    line-height: 1.4;
+    font-family: $headings-fonts-stack;
+  }
+}

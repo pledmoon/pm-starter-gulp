@@ -1,0 +1,244 @@
+extends templates/main
+
+block variables
+  - const title = 'Typography';
+  - const pageClass = 'ui-page';
+
+block content
+
+  style.
+    .demo-section {
+      margin-bottom: 4rem;
+    }
+
+    .demo-subsection:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    .row {
+      display: flex;
+      margin: -3rem -1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .row:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    [class*="col-"] {
+      padding: 3rem 1.5rem 0;
+    }
+
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .col-4 {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+
+    .col-4 > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+  main.content
+    
+    .container-fluid
+
+      .post-entry
+
+        h1 Typography
+
+        h2 Headings
+
+        h1 Heading 1
+        h2 Heading 2
+        h3 Heading 3
+        h4 Heading 4
+        h5 Heading 5
+        h6 Heading 6
+
+        hr
+        
+        h2 Text
+
+        p #[strong Common tags]
+
+        p This is text in new paragraph.
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and #[a(href="#") typesetting industry]. Lorem Ipsum #[a(href="#") has been the industry's] standard dummy text ever since the.
+
+        p This is an example of a #[a(href="#") link]
+        p #[strong Treated as semantically bold]
+        p #[b Treated as just bold]
+        p #[em Treated as semantically italic]
+        p #[i Treated as just italic]
+        p Treated as #[mark marked] text
+        p #[del Treated as deleted text]
+        p #[s Treated as no longer accurate]
+        p #[ins Treated as an addition to the document]
+        p #[u Treated as underlined]
+        p #[small Treated as small text]
+
+        p #[strong Rare tags]
+        p Treated as #[code piece of code]
+        p Large blocks of code
+        pre
+          code.
+            .post-title {
+              margin: 0 0 5px;
+              font-weight: bold;
+              font-size: 38px;
+              line-height: 1.2;
+            }
+        p The abbreviation #[abbr(title="Cascading Style Sheets") CSS] stands for "Cascading Style Sheets".
+        p The acronym #[acronym(title="situational comedy") sitcom] stands for "situational comedy".
+        p Subscript h#[sub 2]O and superscript E = MC#[sup2]
+
+        hr
+        
+        h2 Lists
+
+        p #[strong Unordered list]
+
+        ul
+          li Unordered bullet list-item
+            ul
+              li Second level unordered list-item
+                ul
+                  li Third level unordered list-item
+                  li Third level unordered list-item
+                  li Third level unordered list-item
+                  li Third level unordered list-item
+                  li Third level unordered list-item
+              li Second level unordered list-item
+              li Second level unordered list-item
+              li Second level unordered list-item
+          li Unordered bullet list-item
+          li Unordered bullet list-item
+          li Unordered bullet list-item
+          li Unordered bullet list-item
+
+        p #[strong Ordered list]
+
+        ol
+          li Ordered bullet list-item
+            ol
+              li Second level ordered list-item
+                ol
+                  li Third level ordered list-item
+                  li Third level ordered list-item
+                  li Third level ordered list-item
+                  li Third level ordered list-item
+                  li Third level ordered list-item
+              li Second level ordered list-item
+              li Second level ordered list-item
+              li Second level ordered list-item
+          li Ordered bullet list-item
+          li Ordered bullet list-item
+          li Ordered bullet list-item
+          li Ordered bullet list-item
+
+        p #[strong Description list]
+
+        dl
+          dt Definition Term
+          dd Description Details
+
+        dl
+          dt Definition Term
+          dd Description Details
+
+        dl
+          dt Definition Term
+          dd Description Details
+
+        hr
+        
+        h2 Quotes
+
+        p Blockquote without cite reference:
+
+        blockquote
+          p Lorem ipsum dolor sit avet
+
+        p Blockquote with cite reference:
+
+        blockquote
+          p Lorem ipsum dolor sit avet
+          p Lorem ipsum dolor sit avet
+          em John Smith - manager of this company
+
+        p Blockquote with cite reference:
+        p #[q I love horses] - John Smith
+
+        hr
+
+        h2 Tables
+
+        table
+          thead
+            tr
+              th Caption
+              th Caption
+              th Caption
+              th Caption
+              th Caption
+          tbody
+            tr
+              td Text
+              td Text
+              td Text
+              td Text
+              td Text
+            tr
+              td Text
+              td Text
+              td Text
+              td Text
+              td Text
+            tr
+              td Text
+              td Text
+              td Text
+              td Text
+              td Text
+
+        hr
+
+        h2 Extra
+
+        .callout #[strong Callout:] Leading information
+
+        hr
+
+        p.lead Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+
+        h2 Demo Article h2
+
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        
+        h3 Demo Article h3
+
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        
+        h3 Demo Article h3
+        
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+
+        h2 Demo Article h2
+        h3 Demo Article h3
+
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+
+        figure
+          img(src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" width="600" height="400" alt="")
+          figcaption Description of the image
+
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.

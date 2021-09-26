@@ -1,0 +1,18 @@
+.footer {
+  padding: 3rem 0;
+  background: #eee;
+  margin-top: 8rem;
+  color: #999999;
+  font-size: 1.5rem;
+
+  &__main {
+    text-align: center;
+
+    @include media($md) {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
