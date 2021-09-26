@@ -1,0 +1,108 @@
+.choices {
+  $self: &;
+
+  &[data-type*=select-one] {
+    height: 100%;
+    color: $input-typing-color;
+    margin: 0;
+    position: relative;
+    padding-right: 4rem;
+    border-radius: $input-border-radius;
+    background: $white;
+    transition: all .3s;
+    border: .1rem solid $input-border-normal;
+
+    &:hover {
+      border-color: $input-border-hover;
+    }
+
+    &.is-open {
+      border-color: $input-border-focus;
+      box-shadow: 0 0 1.5rem rgba($primary-color, 0.2);
+
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &::after {
+      content: "";
+      border: none;
+      right: 1.5rem;
+      top: 50%;
+      margin: 0;
+      position: absolute;
+      transform: translateY(-50%);
+      transition: all .3s;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.5rem;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+
+    }
+
+    #{$self}__inner {
+      background: transparent;
+      border: none;
+      height: 100%;
+      padding-right: 0;
+      border: none;
+      color: $input-typing-color;
+      font-size: $input-font-size;
+      line-height: 1.5;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem !important;
+      padding-left: 1.5rem;
+      min-height: 0;
+    }
+
+    #{$self}__list--single {
+      height: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      #{$self}__item {
+        @include trim();
+      }
+    }
+    
+    // dropdown
+    #{$self}__list--dropdown {
+      background: $white;
+      z-index: 56;
+      padding: 0;
+      border-color: $input-border-normal;
+      transform: translateY(1rem);
+      border-radius: .3rem;
+    }
+
+    #{$self}__item--choice {
+      padding: 1rem 1.5rem !important;
+      margin: auto;
+      font-size: 1.6rem;
+
+      &:hover {
+        background: #F7F7F7;
+        //color: $primary-color;
+      }
+    }
+
+    // flipped
+    &.is-flipped {
+      #{$self}__list--dropdown {
+        bottom: 100%;
+        transform: translateY(-1rem);
+      }
+    }
+  }
+}
+
+select[class*="js-select"] {
+  opacity: 0;
+  visibility: hidden;
+}

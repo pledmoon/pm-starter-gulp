@@ -1,0 +1,22 @@
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important; // Chrome, Safari, Edge
+    color-adjust: exact !important;               // Firefox
+  }
+
+  @page {
+    margin-top: 0cm;
+    margin-bottom: 0cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    //size: 210mm 297mm;
+    //size: 850px 1100px;
+    //size: A4;
+    size: letter portrait;
+  }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}

@@ -1,0 +1,25 @@
+.breadcrumbs {
+  font-size: 1.3rem;
+  margin: 0 0 2.5rem;
+  padding: 0;
+
+  &__item {
+    display: inline-block;
+    color: #999999;
+    position: relative;
+
+    &:not(:first-child) {
+      &::before {
+        content: " / ";
+      }
+    }
+  }
+
+  &__link {
+    color: #999999;
+
+    &:hover {
+      color: #666666;
+    }
+  }
+}

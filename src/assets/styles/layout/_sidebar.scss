@@ -1,0 +1,7 @@
+.sidebar {
+  @media (min-width: $md) {
+    > *:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+}

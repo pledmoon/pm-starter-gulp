@@ -1,0 +1,47 @@
+include ../utils/mixins
+
+include ../utils/bemto/bemto
+- set_bemto_settings({ modifier: "--" });
+
+block variables
+
+include head
+
+include ../components/logo
+include ../layouts/header
+include ../layouts/footer
+include ../components/breadcrumbs
+
+doctype html
+html(lang="en")
+
+  head
+    +head()
+
+  body(class=pageClass)
+
+    .wrapper
+
+      .wrapper__main
+
+        block header
+          +header()
+
+          //- .container-fluid
+            //- if breadcrumbs
+            //-     +breadcrumbs(breadcrumbs)
+            //- h1.main-heading= title
+
+        block content
+
+      .wrapper__footer
+
+        block footer
+          +footer()
+
+    include ../components/modal-win-callback
+
+    script(src="assets/js/libs.min.js")
+    script(src="assets/js/main.js")
+
+    block script

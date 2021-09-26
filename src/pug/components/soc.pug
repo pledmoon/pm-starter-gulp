@@ -1,0 +1,9 @@
+mixin soc(data, attrs)
+
+  ul.soc&attributes(attrs)
+    each soc in data.socials
+      - const social = soc.toLowerCase()
+
+      li.soc__item
+        a.soc__link(href="#" class=`soc__link--${social}` target="_blank" rel="nofollow")= soc
+          +icon(`${social}`, 'soc__icon')

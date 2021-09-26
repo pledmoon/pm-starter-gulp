@@ -1,0 +1,7 @@
+/.idea
+/.vscode
+/.git
+node_modules
+**/*.min.js
+**/dist/
+**/vendor/

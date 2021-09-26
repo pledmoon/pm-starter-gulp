@@ -1,0 +1,49 @@
+.footer {
+  padding: 3rem 7rem;
+  background: #eee;
+  margin-top: 8rem;
+  color: #999999;
+  font-size: 1.5rem;
+
+  &__main {
+    text-align: center;
+
+    @media (min-width: $md) {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-nav {
+    margin-bottom: 1rem;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+    }
+    
+    &__item {
+      display: inline-block;
+      vertical-align: middle;
+
+      &:not(:first-child)::before {
+        content: " / ";
+      }
+    }
+
+    &__link {
+      color: #999999;
+      transition: all .3s;
+
+      &:hover {
+        color: #666666;
+      }
+    }
+  }
+}
