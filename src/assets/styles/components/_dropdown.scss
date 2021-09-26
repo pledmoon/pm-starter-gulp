@@ -1,0 +1,113 @@
+.js-dropdown {
+  &:not(.is-opened) > *:not(:first-child) {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.js-dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-dropdown {
+  $self: &;
+
+  position: relative;
+  border: .1rem solid #e3e8ea;
+  border-radius: .5rem;
+  background: #f8f8f8;
+  line-height: 1.15;
+
+  &.is-opened {
+    border-bottom-color: transparent;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    // #{$__self} {
+    //   visibility: visible;
+    //   opacity: 1;
+    // }
+  }
+
+  &__header {
+    align-items: center;
+    padding: 1.1rem 1.2rem;
+    color: #333;
+    font-size: 1.4rem;
+    display: flex;
+
+    &::after {
+      flex: none;
+      width: 1rem;
+      height: 1rem;
+      margin-left: 1rem;
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L5 5L1 1' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__heading {
+    align-items: baseline;
+    flex: 1;
+    flex-wrap: wrap;
+    min-width: 0;
+
+    &-text {
+      flex: 1;
+      min-width: 6rem;
+      margin-right: .5rem;
+
+      @include trim;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    z-index: $dropdownZIndex;
+    top: 100%;
+    right: -.1rem;
+    left: -.1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 21rem;
+    padding: 1rem 0;
+    transition: all .3s ease-in-out;
+    border: .1rem solid #e3e8ea;
+    border-top: none;
+    border-radius: 0 0 .5rem .5rem;
+    background: #f8f8f8;
+
+    &[data-simplebar] {
+      box-sizing: content-box;
+
+      .simplebar-content {
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 1.2rem;
+    transition: all .3s;
+    color: #333;
+    font-size: 1.4rem;
+
+    &:not(.is-disabled) {
+      &:hover {
+        background: #f1f1f1;
+      }
+    }
+
+    &.is-disabled {
+      color: #7e8689;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}

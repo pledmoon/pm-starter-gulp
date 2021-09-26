@@ -1,0 +1,26 @@
+.accordion {
+  $self: &;
+
+  &.is-active {
+    #{$self}__heading::after {
+      content: "-";
+    }
+  }
+
+  &__heading {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+
+    &::after {
+      content: "+";
+      font-size: 2.2rem;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+}

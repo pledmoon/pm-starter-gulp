@@ -1,0 +1,77 @@
+mixin section(data, attrs)
+
+  +b.SECTION.section&attributes(attrs)
+
+    .container-fluid
+
+      if data.heading
+        +e.HEADER.header
+          +e.heading.main-heading= data.heading
+          if data.more
+            +e.A.btn.btn__(href="#")
+              +e.SPAN.text= data.more
+              +icon('arrow-right', 'btn__icon')
+        //- +e.header
+        //-   +e.heading.main-heading__
+        //-     +e.text= data.heading
+
+      +e.body
+        if block
+          block
+        else
+          p No content provided
+
+//- mixin section-default(data, attrs)
+//-   section.section-default&attributes(attrs)
+//-     ._container.container.is-notebook
+//-       if (data.header)
+//-         .section-header._header
+//-           ._container
+//-             if (data.header.main)
+//-               ._main
+//-                 h2.section-heading._heading(class=(data.header.main.heading.isCentered ? 'is-centered' : '') class=data.header.main.heading.type)
+//-                   if (data.header.main.heading.href)
+//-                     a._link(href=data.header.main.heading.href title='')= data.header.main.heading.title
+//-                       i.fe.fe-chevron-right._icon
+//-                   else
+//-                     | #{data.header.main.heading.title}
+
+//-             if (data.header.aside)
+//-               ._aside
+//-                 if (data.header.aside.menu)
+//-                   +menu(data.header.aside.menu)
+
+//-                 if (data.header.aside.filters)
+//-                   ._filters
+//-                     each select in data.header.aside.filters
+//-                       ._filter
+//-                         +select(select, {
+//-                           'data-width': 'auto'
+//-                         })
+
+//-                 if (data.header.aside.select)
+//-                   ._select
+//-                     +select(data.header.aside.select, {
+//-                       'data-width': 'auto'
+//-                     })
+
+//-                 if (data.header.aside.button)
+//-                   +button(data.header.aside.button)
+
+//-                 ._controls
+//-                   if (data.header.aside.controls)
+//-                     if (data.header.aside.controls.counter)
+//-                       +slider-counter(data.header.aside.controls.counter, {
+//-                           class: 'section-header__slider-counter'
+//-                       })
+
+//-                     if (data.header.aside.controls.nav)
+//-                       +slider-nav(data.header.aside.controls.nav, {
+//-                           class: 'section-header__slider-nav'
+//-                       })
+
+//-       .section-body._body
+//-         if (data.caption)
+//-           p._caption= data.caption
+
+//-         block

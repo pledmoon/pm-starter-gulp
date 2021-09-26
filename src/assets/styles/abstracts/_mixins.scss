@@ -1,0 +1,77 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin media($breakpoint, $mobileFirst: true) {
+  @if $mobileFirst {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint - 1) {
+      @content;
+    }
+  }
+}
+
+@mixin trim($linesNumber: null) {
+  @if $linesNumber != null {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $linesNumber;
+    overflow: hidden;
+  } @else {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+@mixin reset-clamp {
+  display: block;
+  -webkit-line-clamp: none;
+  -webkit-box-orient: horizontal;
+}
+
+@mixin hide-element {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+@mixin show-element($static: static, $top: 0, $left: 0) {
+  position: $static;
+  top: $top;
+  left: $left;
+  visibility: visible;
+  overflow: visible;
+  opacity: 1;
+  width: auto;
+  height: auto;
+}
+
+@mixin word-wrap() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}

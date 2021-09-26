@@ -1,0 +1,15 @@
+mixin logo(data, attrs)
+  +b.logo&attributes(attrs)
+    if data.isHomepage
+      +e.SPAN.wrap
+        +e.IMG.img.img-responsive(src="assets/images/logo.png" srcset="assets/images/logo@2x.png 2x" alt="logo" width="195" height="55")
+    else
+      +e.A.wrap(href="/")
+        +e.IMG.img.img-responsive(src="assets/images/logo.png" srcset="assets/images/logo@2x.png 2x" alt="logo" width="195" height="55")
+
+    //- Usage
+    //- +logo({
+    //-   isHomepage: logoIndex
+    //- }, {
+    //-   class: 'header__logo'
+    //- })
